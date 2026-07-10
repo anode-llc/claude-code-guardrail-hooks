@@ -1,5 +1,7 @@
 # claude-code-guardrail-hooks
 
+**日本語版: [README.ja.md](README.ja.md)**
+
 Template hooks for turning a written rule that an AI agent keeps ignoring into
 a mechanism that runs whether the agent cooperates or not.
 
