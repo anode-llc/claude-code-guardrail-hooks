@@ -65,9 +65,11 @@ The hooks read `$CLAUDE_PROJECT_DIR`, so they work from anywhere in your repo.
 git clone https://github.com/anode-llc/claude-code-guardrail-hooks
 cp -r claude-code-guardrail-hooks/hooks ./hooks && chmod +x ./hooks/*.sh
 
-# 2. Merge settings.example.json into your project's .claude/settings.json
-#    (copy the "hooks" block; keep your existing settings).
-cp claude-code-guardrail-hooks/settings.example.json .claude/settings.json
+# 2. If you have no .claude/settings.json yet, copy the example as-is.
+#    If you already have one, merge the "hooks" block from
+#    settings.example.json into it by hand (keep your existing settings —
+#    do NOT overwrite the file).
+[ -f .claude/settings.json ] || cp claude-code-guardrail-hooks/settings.example.json .claude/settings.json
 ```
 
 Each script is a **skeleton**: it runs as-is with a generic placeholder rule,
